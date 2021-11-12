@@ -64,6 +64,9 @@ do
                 h) Help;;
                 v)
                         set -xv;;
+                shortlist)
+                        echo c i I l h v
+                        ;;
                 *) echo "Invalid option: -$flag"
                         exit;;
         esac

@@ -1,1 +1,2 @@
 conflict test
+same file name, different text
