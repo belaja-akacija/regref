@@ -11,7 +11,7 @@ Category()
         #echo $search
         #search=$(cat regref.txt | pcregrep -Mi "(^\|\s+($category)+.+)([+=]+)(\|.+)+")
         #echo $search
-        search2=$(cat ~/Documents/scripts/regref.txt | pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+")
+        search2=$(cat ~/Documents/scripts/regref/regref.txt | pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+")
         echo $search2
 
 }
@@ -19,19 +19,19 @@ Category()
 Item()
 {
         item=$OPTARG
-        result=$(cat ~/Documents/scripts/regref.txt | grep --color=always -iE $item)
+        result=$(cat ~/Documents/scripts/regref/regref.txt | grep --color=always -iE $item)
         echo $result
 }
 
 List()
 {
-        list=$(cat ~/Documents/scripts/regref.txt | grep --color=never -E "(^\|\s(\w+\s)+)")
+        list=$(cat ~/Documents/scripts/regref/regref.txt | grep --color=never -E "(^\|\s(\w+\s)+)")
         echo $list
 }
 
 Help()
 {
-        echo "\nWelcome to the RegEx Cheatsheet!\nHere are your options"
+        echo "\nWelcome to the RegEx Cheatsheet! (v.1.0.1)\nHere are your options"
         echo
         echo "-l -- list all categories"
         echo "-c -- choose a category to view"
