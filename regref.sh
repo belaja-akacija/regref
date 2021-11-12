@@ -2,16 +2,11 @@
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
-# V.1.0.2 -- Test build
-# TODO:
-# - Store category names in an array and allow tab completion for them when using -c flag
-# - Figure out how to not allow certain flags to be used together
+# V.1.0.3
 
 Category()
 {
         category=$OPTARG
-        #search2=$(cat ~/Documents/scripts/regref/regref.txt | pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+")
-        #echo $search2
         search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
         echo $search
 
@@ -59,21 +54,11 @@ do
                         Category
                         ;;
                 i)
-                        #if [[$flag =~ $testing]];
-                        #then
-                        #Item
-                        #elif [[$flag !=~ $noIFlag]];
-                        #then
-                        #echo "Not possible."
-                        #exit
-                        #fi
                         Item
                         ;;
                 I)
                         Regex
                         ;;
-
-                #I) echo "yes";;
 
                 l) List;;
                 h) Help;;
