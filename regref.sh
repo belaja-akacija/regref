@@ -1,37 +1,35 @@
 #!/bin/zsh
 
 # Simple search in regex_reference database
-# V.1.0.1
+# Author: Belaja-akacija
+# V.1.0.2 -- Test build
 
 Category()
 {
         category=$OPTARG
-        file=$(<~/Documents/Linux_Cheat_Sheets/regex_reference.txt)
-        #search= $(echo "$file" | grep -iE "^(\|\s(${category})+.+\n)([+=]+\n)(\|.+\n)+")
-        #echo $search
-        #search=$(cat regref.txt | pcregrep -Mi "(^\|\s+($category)+.+)([+=]+)(\|.+)+")
-        #echo $search
-        search2=$(cat ~/Documents/scripts/regref/regref.txt | pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+")
-        echo $search2
+        #search2=$(cat ~/Documents/scripts/regref/regref.txt | pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+")
+        #echo $search2
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
+        echo $search
 
 }
 
 Item()
 {
         item=$OPTARG
-        result=$(cat ~/Documents/scripts/regref/regref.txt | grep --color=always -iE $item)
+        result=$(grep --color=always -iE $item ~/Documents/scripts/regref/regref.txt )
         echo $result
 }
 
 List()
 {
-        list=$(cat ~/Documents/scripts/regref/regref.txt | grep --color=never -E "(^\|\s(\w+\s)+)")
+        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/regref.txt)
         echo $list
 }
 
 Help()
 {
-        echo "\nWelcome to the RegEx Cheatsheet! (v.1.0.1)\nHere are your options"
+        echo "\nWelcome to the RegEx Cheatsheet! (v.1.0.2)\nHere are your options"
         echo
         echo "-l -- list all categories"
         echo "-c -- choose a category to view"
