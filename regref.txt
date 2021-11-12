@@ -1,91 +1,91 @@
-+=========================+==========================================+
-| Anchors                 | To orient yourself with                  |
-+=========================+==========================================+
-| ```^```                 | Start of a line                          |
-| ```\A```                | Start of a string                        |
-| ```$```                 | End of a line                            |
-| ```\Z```                | End of a string                          |
-| ```\\b```                | Word boundary                            |
-| ```<``` and ```>```     | Vim word boundary                        |
-| ```\B```                | Not a word boundary                      |
-+=========================+==========================================+
-| Character Classes       | Types of regular characters              |
-+=========================+==========================================+
-| ```\s```                | Whitespace                               |
-| ```\S```                | Not whitespace                           |
-| ```\d```                | Digit                                    |
-| ```\D```                | Not a digit                              |
-| ```\w```                | Word                                     |
-| ```\W```                | Not a word                               |
-| ```\c```                | Control character                        |
-+=========================+==========================================+
-| Special Characters      | Types of special characters              |
-+=========================+==========================================+
-| ```\```                 | Escape Character                         |
-| ```\\n```                | New line                                 |
-| ```\\r```                | Carriage return                          |
-| ```\\t```                | Tab                                      |
-| ```\\f```                | Form feed                                |
-+=========================+==========================================+
-| Ranges (Quantifiers)    | Counts and basic logic for patterns      |
-+=========================+==========================================+
-| ```*```                 | 0 or more                                |
-| ```*?```                | 0 or more, ungreedy                      |
-| ```+```                 | 1 or more                                |
-| ```+?```                | 1 or more                                |
-| ```?```                 | 0 or 1                                   |
-| ```??```                | 0 or 1, ungreedy                         |
-| ```{3}```               | Exactly 3                                |
-| ```{3,}```              | Exactly 3, or more                       |
-| ```{3,5}```             | 3, 4, or 5                               |
-| ```{3,5}?```            | 3, 4, or 5, ungreedy                     |
-+=========================+==========================================+
-| Logic                   | Conditional expressions on patterns      |
-+=========================+==========================================+
-| ```.```                 | Any character except new line (```\\n```) |
-| ```(a\|b)```            | 0 or more, ungreedy                      |
-| ```(...)```             | Group                                    |
-| ```(?:...)```           | Passive group                            |
-| ```[abc]```             | Range (a or b or c)                      |
-| ```[^abc]```            | Not a or b or c                          |
-| ```[a-q]```             | Letter between a and q                   |
-| ```[A-Q]```             | Letter between A and Q                   |
-| ```[0-7]```             | Digit between 0-7                        |
-| ```\\n```                | nth group/subpattern                     |
-+=========================+==========================================+
-| Pattern Modifiers       | Flags that redefine regex behaviour      |
-+=========================+==========================================+
-| ```g```                 | Global match                             |
-| ```i```                 | Case insensitive                         |
-| ```m```                 | Multiple lines                           |
-| ```s```                 | Treat string as single line              |
-| ```x```                 | Allow comments and whitespace in pattern |
-| ```e```                 | Evaluate replacement                     |
-| ```U```                 | Ungreedy pattern                         |
-+=========================+==========================================+
-| Assertions              |                                          |
-+=========================+==========================================+
-| ```?=```                | Lookahead assertion                      |
-| ```?!```                | Negative lookahead                       |
-| ```?<=```               | Lookbehind assertion                     |
-| ```?!=``` or ```?<!```  | Negative lookbehind                      |
-| ```?>```                | Once-only subexpression                  |
-| ```?()```               | Condition [if then]                      |
-| ```?()\|```             | Condition [if then else]                 |
-| ```?#```                | Comment                                  |
-+=========================+==========================================+
-| POSIX Character Classes |                                          |
-+=========================+==========================================+
-| ```[:upper:]```         | Uppercase letters                        |
-| ```[:lower:]```         | Lowercase letters                        |
-| ```[:alpha:]```         | All letters                              |
-| ```[:alnum:]```         | Digits and letters                       |
-| ```[:digit:]```         | Digits                                   |
-| ```[:punct:]```         | Punctuation                              |
-| ```[:blank:]```         | Space and tab                            |
-| ```[:space:]```         | Blank characters                         |
-| ```[:cntrl:]```         | Control characters                       |
-| ```[:graph:]```         | Printed characters                       |
-| ```[:print:]```         | Printed characters and spaces            |
-| ```[:word:]```          | Digits, letters, and underscore          |
-+=========================+==========================================+
++=========================+==================================================+
+| Anchors                 | To orient yourself with                          |
++=========================+==================================================+
+| ```^```                 | Start of a line                                  |
+| ```\A```                | Start of a string                                |
+| ```$```                 | End of a line                                    |
+| ```\Z```                | End of a string                                  |
+| ```\\b```               | Word boundary                                    |
+| ```<``` and ```>```     | Vim word boundary                                |
+| ```\B```                | Not a word boundary                              |
++=========================+==================================================+
+| Character Classes       | Types of regular characters                      |
++=========================+==================================================+
+| ```\s```                | Whitespace                                       |
+| ```\S```                | Not whitespace                                   |
+| ```\d```                | Digit                                            |
+| ```\D```                | Not a digit                                      |
+| ```\w```                | Word                                             |
+| ```\W```                | Not a word                                       |
+| ```\c```                | Control character                                |
++=========================+==================================================+
+| Special Characters      | Types of special characters                      |
++=========================+==================================================+
+| ```\```                 | Escape Character                                 |
+| ```\\n```               | New line                                         |
+| ```\\r```               | Carriage return                                  |
+| ```\\t```               | Tab                                              |
+| ```\\f```               | Form feed                                        |
++=========================+==================================================+
+| Ranges (Quantifiers)    | Counts and basic logic for patterns              |
++=========================+==================================================+
+| ```*```                 | 0 or more                                        |
+| ```*?```                | 0 or more, ungreedy                              |
+| ```+```                 | 1 or more                                        |
+| ```+?```                | 1 or more                                        |
+| ```?```                 | 0 or 1                                           |
+| ```??```                | 0 or 1, ungreedy                                 |
+| ```{3}```               | Exactly 3                                        |
+| ```{3,}```              | Exactly 3, or more                               |
+| ```{3,5}```             | 3, 4, or 5                                       |
+| ```{3,5}?```            | 3, 4, or 5, ungreedy                             |
++=========================+==================================================+
+| Logic                   | Conditional expressions on patterns              |
++=========================+==================================================+
+| ```.```                 | Any character except new line (```\\n```)        |
+| ```(a\|b)```            | 0 or more, ungreedy                              |
+| ```(...)```             | Group                                            |
+| ```(?:...)```           | Passive group                                    |
+| ```[abc]```             | Range (a or b or c)                              |
+| ```[^abc]```            | Not a or b or c                                  |
+| ```[a-q]```             | Letter between a and q                           |
+| ```[A-Q]```             | Letter between A and Q                           |
+| ```[0-7]```             | Digit between 0-7                                |
+| ```\\n```               | nth group/subpattern                             |
++=========================+==================================================+
+| Pattern Modifiers       | Flags that redefine regex behaviour              |
++=========================+==================================================+
+| ```g```                 | Global match                                     |
+| ```i```                 | Case insensitive                                 |
+| ```m```                 | Multiple lines                                   |
+| ```s```                 | Treat string as single line                      |
+| ```x```                 | Allow comments and whitespace in pattern         |
+| ```e```                 | Evaluate replacement                             |
+| ```U```                 | Ungreedy pattern                                 |
++=========================+==================================================+
+| Assertions              | A regex that either succeds or fails             |
++=========================+==================================================+
+| ```?=```                | Lookahead assertion                              |
+| ```?!```                | Negative lookahead                               |
+| ```?<=```               | Lookbehind assertion                             |
+| ```?!=``` or ```?<!```  | Negative lookbehind                              |
+| ```?>```                | Once-only subexpression                          |
+| ```?()```               | Condition [if then]                              |
+| ```?()\|```             | Condition [if then else]                         |
+| ```?#```                | Comment                                          |
++=========================+==================================================+
+| POSIX Character Classes | POSIX bracket expressions, for extending locales |
++=========================+==================================================+
+| ```[:upper:]```         | Uppercase letters                                |
+| ```[:lower:]```         | Lowercase letters                                |
+| ```[:alpha:]```         | All letters                                      |
+| ```[:alnum:]```         | Digits and letters                               |
+| ```[:digit:]```         | Digits                                           |
+| ```[:punct:]```         | Punctuation                                      |
+| ```[:blank:]```         | Space and tab                                    |
+| ```[:space:]```         | Blank characters                                 |
+| ```[:cntrl:]```         | Control characters                               |
+| ```[:graph:]```         | Printed characters                               |
+| ```[:print:]```         | Printed characters and spaces                    |
+| ```[:word:]```          | Digits, letters, and underscore                  |
++=========================+==================================================+
