@@ -1,7 +1,7 @@
 #!/bin/zsh
 
 # Simple search in regex_reference database
-# V.1.0
+# V.1.0.1
 
 Category()
 {
@@ -31,6 +31,7 @@ List()
 
 Help()
 {
+        echo "\nWelcome to the RegEx Cheatsheet!\nHere are your options"
         echo
         echo "-l -- list all categories"
         echo "-c -- choose a category to view"
