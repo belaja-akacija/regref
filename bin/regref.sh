@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/zsh
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
@@ -7,7 +7,7 @@
 Category()
 {
         category=$OPTARG
-        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/data/regref.txt)
         echo $search
 
 }
@@ -15,20 +15,20 @@ Category()
 Item()
 {
         item=$OPTARG
-        result=$(grep --color=always -iE "$item" ~/Documents/scripts/regref/regref.txt )
+        result=$(grep --color=always -iE "$item" ~/Documents/scripts/regref/data/regref.txt )
         echo $result
 }
 
 Regex()
 {
         item=$OPTARG
-        result=$(grep --color=always -E "$item" ~/Documents/scripts/regref/regref.txt )
+        result=$(grep --color=always -E "$item" ~/Documents/scripts/regref/data/regref.txt )
         echo $result
 }
 
 List()
 {
-        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/regref.txt)
+        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/data/regref.txt)
         echo $list
 }
 
@@ -64,9 +64,9 @@ do
                 h) Help;;
                 v)
                         set -xv;;
-                shortlist)
-                        echo c i I l h v
-                        ;;
+                #shortlist)
+                        #echo c i I l h v
+                        #;;
                 *) echo "Invalid option: -$flag"
                         exit;;
         esac
