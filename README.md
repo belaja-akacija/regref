@@ -1,4 +1,4 @@
-# RegEx Reference Shell Script (Test Build)
+# RegEx Reference Shell Script
 
 ## TODO List
 
