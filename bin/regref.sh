@@ -2,12 +2,16 @@
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
-# V.1.0.3
+# V.1.0.4a
+#
+# Idea: maybe get the pwd then find the files needed from there backwards?
+# but this assumes that the user is in the current working directory as the program... We'll see
+
 
 Category()
 {
         category=$OPTARG
-        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" $HOME/Documents/scripts/regref/data/regref.txt)
         echo $search
 
 }
@@ -15,20 +19,20 @@ Category()
 Item()
 {
         item=$OPTARG
-        result=$(grep --color=always -iE "$item" ~/Documents/scripts/regref/regref.txt )
+        result=$(grep --color=always -iE "$item" $HOME/Documents/scripts/regref/data/regref.txt )
         echo $result
 }
 
 Regex()
 {
         item=$OPTARG
-        result=$(grep --color=always -E "$item" ~/Documents/scripts/regref/regref.txt )
+        result=$(grep --color=always -E "$item" $HOME/Documents/scripts/regref/data/regref.txt )
         echo $result
 }
 
 List()
 {
-        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/regref.txt)
+        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" $HOME/Documents/scripts/regref/data/regref.txt)
         echo $list
 }
 
