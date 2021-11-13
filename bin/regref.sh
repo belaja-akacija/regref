@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
@@ -7,7 +7,7 @@
 Category()
 {
         category=$OPTARG
-        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/data/regref.txt)
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
         echo $search
 
 }
