@@ -1,8 +1,9 @@
-#!/bin/zsh
+#!/bin/bash
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
-# V.1.0.4a
+# V1.0.4a
+VERSION="V1.0.4a"
 
 Category()
 {
@@ -34,7 +35,7 @@ List()
 
 Help()
 {
-        echo "\n\tWelcome to the RegEx Cheatsheet! (v.1.0.4a)"
+        echo "\n\tWelcome to the RegEx Cheatsheet! ($VERSION)"
         echo
         echo "\tUsage: regref [OPTION]... [SEARCH]\n      NOTE: for RegEx searches instead of keywords, use double quotes\n"
         echo "  +  -c   #-----------> choose a category to view"
