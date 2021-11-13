@@ -1,4 +1,4 @@
-#!/usr/bin/zsh
+#!/bin/zsh
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
