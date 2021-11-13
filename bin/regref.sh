@@ -7,7 +7,7 @@
 Category()
 {
         category=$OPTARG
-        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/data/regref.txt)
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" ~/Documents/scripts/regref/regref.txt)
         echo $search
 
 }
@@ -15,34 +15,34 @@ Category()
 Item()
 {
         item=$OPTARG
-        result=$(grep --color=always -iE "$item" ~/Documents/scripts/regref/data/regref.txt )
+        result=$(grep --color=always -iE "$item" ~/Documents/scripts/regref/regref.txt )
         echo $result
 }
 
 Regex()
 {
         item=$OPTARG
-        result=$(grep --color=always -E "$item" ~/Documents/scripts/regref/data/regref.txt )
+        result=$(grep --color=always -E "$item" ~/Documents/scripts/regref/regref.txt )
         echo $result
 }
 
 List()
 {
-        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/data/regref.txt)
+        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" ~/Documents/scripts/regref/regref.txt)
         echo $list
 }
 
 Help()
 {
-        echo "\n\tWelcome to the RegEx Cheatsheet! (v.1.0.3)"
+        echo "\nWelcome to the RegEx Cheatsheet! (v.1.0.3)\nHere are your options: "
         echo
-        echo "\tUsage: regref [OPTION]... [SEARCH]\n      NOTE: for RegEx searches instead of keywords, use double quotes\n"
-        echo "  +  -c   #-----------> choose a category to view"
-        echo "  +  -h   #-----------> this help menu"
-        echo "  +  -i   #-----------> search for a specific item (case insensitive)"
-        echo "  +  -I   #-----------> search for a specific item (case sensitive)"
-        echo "  +  -l   #-----------> list all categories"
-        echo "  +  -v   #-----------> verbose mode, for debugging purposes"
+        echo "Usage: regref [OPTION]... [SEARCH]\nNOTE: for RegEx searches instead of keywords, use double quotes\n"
+        echo "-l -- list all categories"
+        echo "-c -- choose a category to view"
+        echo "-i -- search for a specific item (case insensitive)"
+        echo "-I -- search for a specific item (case sensitive)"
+        echo "-v -- verbose mode, for debugging purposes"
+        echo "-h -- this help menu"
         echo
 }
 
