@@ -13,41 +13,49 @@ echo ""
 USERNAME="$USER"
 echo $USERNAME
 # Create a destination folder
-DESTINATION="$HOME/bin"
+DESTINATION="/usr/local/bin"
+SUPPLEMENT_DIR="/usr/local/src"
 
-sudo /bin/bash -c "mkdir -p ${DESTINATION}"
-mkdir regref
+cd bin
+sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
-mv regref/!(install.sh) regref/regref
-cd regref
-tar czfv regref_build.tar.gz regref
-cat regref_build.tar.gz >> install.sh
+sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
+sudo /bin/bash -c "install -v -d data $SUPPLEMENT_DIR"
 
-# Find __ARCHIVE__ marker, read archive contents and decompress it
-ARCHIVE=$(awk '/^__ARCHIVE__/ {print NR + 1; exit 0; }' "${0}")
-sudo /bin/bash -c "tail -n+${ARCHIVE} \"${0}\" | tar xpzv -C ${DESTINATION}"
-
-# Install logic
-sudo /bin/bash -c "chmod +x ${DESTINATION}/regref/bin/regref.sh"
-sudo /bin/bash -c "mv ${DESTINATION}/regref/regref-completion.sh /etc/bash_completion.d; source /etc/bash_completion.d/regref-completion.sh"
-# clean-up
-cd regref
-rm -rf regref_build.tar.gz
-mv * ..
-cd ..
-rm -rf regref
-rm -rf regref_build.tar.gz
-
-# Set up $PATH variable
+ #Set up $PATH variable
 source $HOME/.profile
-PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/opt\/[:]?)')
+PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/local\/bin[:]?)')
 
-if [[ ! $PATH_MATCH =~ \/usr\/opt\/[:]? ]];
+if [[ ! $PATH_MATCH =~ \/usr\/local\/bin[:]? ]];
 then
-        echo 'export PATH="${PATH:+${PATH}:}/$HOME/bin"' >> $HOME/.profile
+        echo 'export PATH="${PATH:+${PATH}:}/usr/local/bin"' >> $HOME/.profile
         source $HOME/.profile
 
 fi
+
+
+#sudo /bin/bash -c "mkdir -p ${DESTINATION}"
+#mkdir regref
+#cd ..
+#mv regref/!(install.sh) regref/regref
+#cd regref
+#tar czfv regref_build.tar.gz regref
+#cat regref_build.tar.gz >> install.sh
+
+# Find __ARCHIVE__ marker, read archive contents and decompress it
+#ARCHIVE=$(awk '/^__ARCHIVE__/ {print NR + 1; exit 0; }' "${0}")
+#sudo /bin/bash -c "tail -n+${ARCHIVE} \"${0}\" | tar xpzv -C ${DESTINATION}"
+
+## Install logic
+#sudo /bin/bash -c "chmod +x ${DESTINATION}/regref/bin/regref.sh"
+#sudo /bin/bash -c "mv ${DESTINATION}/regref/regref-completion.sh /etc/bash_completion.d; source /etc/bash_completion.d/regref-completion.sh"
+## clean-up
+#cd regref
+#rm -rf regref_build.tar.gz
+#mv * ..
+#cd ..
+#rm -rf regref
+#rm -rf regref_build.tar.gz
 
 
 echo ""
@@ -57,4 +65,4 @@ echo ""
 # Exit with success
 exit 0
 
-__ARCHIVE__
+#__ARCHIVE__
