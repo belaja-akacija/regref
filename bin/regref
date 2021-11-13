@@ -7,11 +7,12 @@
 # Idea: maybe get the pwd then find the files needed from there backwards?
 # but this assumes that the user is in the current working directory as the program... We'll see
 
+SUPPLEMENT_DIR="/usr/local/src/data"
 
 Category()
 {
         category=$OPTARG
-        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" $HOME/Documents/scripts/regref/data/regref.txt)
+        search=$(pcregrep -Mi "(^\|\s+($category)+.+\n)([+=]+\n)(\|.+\n)+" $SUPPLEMENT_DIR/regref.txt)
         echo $search
 
 }
@@ -19,20 +20,20 @@ Category()
 Item()
 {
         item=$OPTARG
-        result=$(grep --color=always -iE "$item" $HOME/Documents/scripts/regref/data/regref.txt )
+        result=$(grep --color=always -iE "$item" $SUPPLEMENT_DIR/regref.txt )
         echo $result
 }
 
 Regex()
 {
         item=$OPTARG
-        result=$(grep --color=always -E "$item" $HOME/Documents/scripts/regref/data/regref.txt )
+        result=$(grep --color=always -E "$item" $SUPPLEMENT_DIR/regref.txt )
         echo $result
 }
 
 List()
 {
-        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" $HOME/Documents/scripts/regref/data/regref.txt)
+        list=$(grep --color=never -E "(^\|\s(\w+\s)+)" $SUPPLEMENT_DIR/regref.txt)
         echo $list
 }
 
