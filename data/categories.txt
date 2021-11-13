@@ -1,8 +1,0 @@
-| Anchors                 | To orient yourself with                          |
-| Character Classes       | Types of regular characters                      |
-| Special Characters      | Types of special characters                      |
-| Ranges (Quantifiers)    | Counts and basic logic for patterns              |
-| Logic                   | Conditional expressions on patterns              |
-| Pattern Modifiers       | Flags that redefine regex behaviour              |
-| Assertions              | A regex that either succeds or fails             |
-| POSIX Character Classes | POSIX bracket expressions, for extending locales |
