@@ -10,6 +10,15 @@ echo
 echo "Regref Installer"
 echo
 
+#check_errs()
+#{
+        #if [ $? -ne 0 ]; then
+                #echo "error"
+                #exit
+        #fi
+#}
+
+
 # Create a destination folder
 DESTINATION="/usr/local/bin"
 SUPPLEMENT_DIR="/usr/local/src"
@@ -20,6 +29,8 @@ sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
 sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
 cd data
+
+#sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data 2>/dev/null || { echo "failure"; exit; }"
 
 if test -d "$SUPPLEMENT_DIR/data";
 then
