@@ -20,11 +20,34 @@ sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
 sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
 cd data
-sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data; install -v * $SUPPLEMENT_DIR/data"
+
+if test -d "$SUPPLEMENT_DIR/data";
+then
+        echo "$SUPPLEMENT_DIR/data exists."
+else
+        echo
+        echo "$SUPPLEMENT_DIR/data does not exist. Creating..."
+        echo
+        sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data"
+fi
+
+sudo /bin/bash -c " install -v * $SUPPLEMENT_DIR/data"
 cd ..
 
 # Set up $PATH variable
-source $HOME/.profile
+PROFILE="$HOME/.profile"
+if test -f "$PROFILE";
+then
+        echo
+        echo "$PROFILE exists. Continuing..."
+        echo
+else
+        echo
+        echo "$PROFILE does not exist. Making file..."
+        echo
+        touch $PROFILE
+fi
+
 PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/local\/bin[:]?)')
 
 if [[ ! $PATH_MATCH =~ \/usr\/local\/bin[:]? ]];
