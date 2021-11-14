@@ -56,7 +56,6 @@ then
         source $HOME/.profile
 
 fi
-foo bar
 echo ""
 echo "Installation complete."
 echo ""
