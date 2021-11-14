@@ -1,1 +1,0 @@
-/home/belajaakacija/perl5/bin:/home/belajaakacija/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
