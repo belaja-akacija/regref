@@ -17,8 +17,10 @@
 - Match categories dynamically using regex and output it into a file
 - [x] Install the program like any other script
 - Get user input filtering down with regex
+- check for dependencies and shell for installer
 
 ### Current issues
 
 - ```pcregrep``` is not executing properly in the regref_completion shell script to find the categories dynamically using regex.
 - [x] ```$PATH``` for some reason not updating during install and gives ```permission``` denied with zsh and ```command not found``` with bash
+- installing on alpine userland (iSH iphone) not copying regref.txt into the proper directory

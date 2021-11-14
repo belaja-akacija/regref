@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/bash bash
 shopt -s extglob
 # Regref installer
 # TODO:
