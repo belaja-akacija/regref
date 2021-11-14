@@ -23,4 +23,4 @@
 
 - ```pcregrep``` is not executing properly in the regref_completion shell script to find the categories dynamically using regex.
 - [x] ```$PATH``` for some reason not updating during install and gives ```permission``` denied with zsh and ```command not found``` with bash
-- installing on alpine userland (iSH iphone) not copying regref.txt into the proper directory
+- [x] installing on alpine userland (iSH iphone) not copying regref.txt into the proper directory
