@@ -6,13 +6,13 @@ shopt -s extglob
 # - source the autocomplete, later put it in /etc/bash_completion.d
 # - get the installer to make a directory to archive then do the install logic
 
-echo ""
+echo
 echo "Regref Installer"
-echo ""
-
+echo
 # Create a destination folder
 DESTINATION="/usr/local/bin"
 SUPPLEMENT_DIR="/usr/local/src"
+
 
 cd bin
 sudo /bin/bash -c "install -v * $DESTINATION"
