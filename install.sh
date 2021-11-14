@@ -1,4 +1,4 @@
-#!/usr/bin/bash bash
+#!/usr/bin/bash
 shopt -s extglob
 # Regref installer
 # TODO:
@@ -9,19 +9,21 @@ shopt -s extglob
 echo
 echo "Regref Installer"
 echo
+
 # Create a destination folder
 DESTINATION="/usr/local/bin"
 SUPPLEMENT_DIR="/usr/local/src"
 
+# Copying files
 cd bin
 sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
 sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
 cd data
-sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data"
-sudo /bin/bash -c "install -v * $SUPPLEMENT_DIR/data"
+sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data; install -v * $SUPPLEMENT_DIR/data"
+cd ..
 
- #Set up $PATH variable
+# Set up $PATH variable
 source $HOME/.profile
 PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/local\/bin[:]?)')
 
