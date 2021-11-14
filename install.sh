@@ -48,15 +48,15 @@ else
         touch $PROFILE
 fi
 
-PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/local\/bin[:]?)')
+PATH_MATCH=$(echo $PATH | grep -E '(\/usr\/local\/bin[\/:]?)')
 
-if [[ ! $PATH_MATCH =~ \/usr\/local\/bin[:]? ]];
+if [[ ! $PATH_MATCH =~ \/usr\/local\/bin[\/:]? ]];
 then
         echo 'export PATH="${PATH:+${PATH}:}/usr/local/bin"' >> $HOME/.profile
         source $HOME/.profile
 
 fi
-
+foo bar
 echo ""
 echo "Installation complete."
 echo ""
