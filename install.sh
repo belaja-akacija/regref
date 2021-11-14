@@ -13,12 +13,13 @@ echo
 DESTINATION="/usr/local/bin"
 SUPPLEMENT_DIR="/usr/local/src"
 
-
 cd bin
 sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
 sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
-sudo /bin/bash -c "install -v -d data $SUPPLEMENT_DIR"
+cd data
+sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data"
+sudo /bin/bash -c "install -v * $SUPPLEMENT_DIR/data"
 
  #Set up $PATH variable
 source $HOME/.profile
