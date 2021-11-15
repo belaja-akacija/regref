@@ -2,9 +2,11 @@
 shopt -s extglob
 # Regref installer
 # TODO:
-# - set $PATH to bin
-# - source the autocomplete, later put it in /etc/bash_completion.d
-# - get the installer to make a directory to archive then do the install logic
+# - [ X ] set $PATH to bin
+# - [ X ] source the autocomplete, later put it in /etc/bash_completion.d
+# - [ X ] get the installer to make a directory to archive then do the install logic
+# - [  ]  check for dependencies and prompt to install them, if not found.
+#           - pcregrep, zsh, bash,
 
 echo
 echo "Regref Installer"
@@ -22,6 +24,20 @@ echo
 # Create a destination folder
 DESTINATION="/usr/local/bin"
 SUPPLEMENT_DIR="/usr/local/src"
+
+# Check for dependencies
+CHECK_FOR () {
+        command -v $1 >/dev/null 2>&1 || {
+                echo >&2 "$1 required.";
+        exit 1;
+        }
+}
+CHECK_FOR pcregrep
+echo "pcregrep exist. Continuing..."
+CHECK_FOR zsh
+echo "zsh exist. Continuing..."
+CHECK_FOR bash
+echo "bash exist. Continuing..."
 
 # Copying files
 cd bin
