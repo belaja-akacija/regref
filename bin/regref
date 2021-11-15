@@ -8,6 +8,7 @@
 # but this assumes that the user is in the current working directory as the program... We'll see
 
 SUPPLEMENT_DIR="/usr/local/src/data"
+VERSION="v1.0.5a"
 
 Category()
 {
@@ -39,7 +40,7 @@ List()
 
 Help()
 {
-        echo "\n\tWelcome to the RegEx Cheatsheet! ($VERSION)"
+        echo "\n\tWelcome to the RegEx Cheatsheet! ($VERSION)\n\t       Author: Belaja-akacija\n\t\t\t2021"
         echo
         echo "\tUsage: regref [OPTION]... [SEARCH]\n      NOTE: for RegEx searches instead of keywords, use double quotes\n"
         echo "  +  -c   #-----------> choose a category to view"
