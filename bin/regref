@@ -2,7 +2,7 @@
 
 # Simple search in regex_reference database
 # Author: Belaja-akacija
-# V.1.0.4a
+# V.1.0.5a
 #
 # Idea: maybe get the pwd then find the files needed from there backwards?
 # but this assumes that the user is in the current working directory as the program... We'll see
