@@ -81,7 +81,7 @@ then
         source $HOME/.profile
 
 fi
-echo "\nInstallation complete.\n"
+echo -e "\nInstallation complete.\n"
 
 # Exit with success
 exit 0
