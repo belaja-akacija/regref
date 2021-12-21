@@ -8,9 +8,7 @@ shopt -s extglob
 # - [  ]  check for dependencies and prompt to install them, if not found.
 #           - pcregrep, zsh, bash,
 
-echo
-echo "Regref Installer"
-echo
+echo -e "\nRegref Installer\n"
 
 #check_errs()
 #{
@@ -83,9 +81,7 @@ then
         source $HOME/.profile
 
 fi
-echo ""
-echo "Installation complete."
-echo ""
+echo "\nInstallation complete.\n"
 
 # Exit with success
 exit 0
