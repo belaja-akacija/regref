@@ -1,0 +1,14 @@
+#compdef regref
+
+local -a args
+
+args=(
+    '-c[choose a category to view]'
+    '-h[help menu]'
+    '-i[case insensitive search]'
+    '-I[case sensitive search]'
+    '-l[list all categories]'
+    '-v[verbose mode, debugging purposes]'
+  )
+
+  _arguments -s -S $args

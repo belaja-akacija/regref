@@ -3,7 +3,7 @@ shopt -s extglob
 # Regref installer
 # TODO:
 # - [ X ] set $PATH to bin
-# - [ X ] source the autocomplete, later put it in /etc/bash_completion.d
+# - [  ] source the autocomplete, later put it in /etc/bash_completion.d
 # - [ X ] get the installer to make a directory to archive then do the install logic
 # - [  ]  check for dependencies and prompt to install them, if not found.
 #           - pcregrep, zsh, bash,
@@ -41,7 +41,11 @@ echo "bash exist. Continuing..."
 cd bin
 sudo /bin/bash -c "install -v * $DESTINATION"
 cd ..
-sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
+
+# Bash completion not found. Remove for now
+# sudo /bin/bash -c "install -v regref-completion.sh /etc/bash_completion.d"
+# install zsh completion
+sudo /bin/bash -c "install -v src/_regref /usr/share/zsh/functions/Completion/X"
 cd data
 
 #sudo /bin/bash -c "mkdir $SUPPLEMENT_DIR/data 2>/dev/null || { echo "failure"; exit; }"
