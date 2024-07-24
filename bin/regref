@@ -53,27 +53,30 @@ Help()
 }
 
 
-while getopts "c:i:I:lhv" flag
-do
-        case "${flag}" in
-                c)
-                        Category
-                        ;;
-                i)
-                        Item
-                        ;;
-                I)
-                        Regex
-                        ;;
-
-                l) List;;
-                h) Help;;
-                v)
-                        set -xv;;
-                #shortlist)
-                        #echo c i I l h v
-                        #;;
-                *) echo "Invalid option: -$flag"
-                        exit;;
-        esac
-done
+if [ -z "$*" ]; then
+  Help
+else
+  while getopts "c:i:I:lhv" flag
+  do
+    case "${flag}" in
+      c)
+        Category
+        ;;
+      i)
+        Item
+        ;;
+      I)
+        Regex
+        ;;
+      l) List;;
+      h) Help;;
+      v)
+        set -xv;;
+      #shortlist)
+        #echo c i I l h v
+        #;;
+      *) echo "Invalid option: -$flag"
+        exit;;
+    esac
+  done
+fi
